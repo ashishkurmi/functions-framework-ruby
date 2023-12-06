@@ -4,14 +4,6 @@ on:
     branches:
       - main
 
-
-
-
-
-
-
-
-      
 permissions:
   contents: read
 jobs:
@@ -28,6 +20,54 @@ jobs:
           index.rubygems.org:443
           objects.githubusercontent.com:443
           rubygems.org:443
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@v2
+      with:
+        disable-sudo: true
+        egress-policy: block
+        allowed-endpoints: >
+          github.com:443
+          index.rubygems.org:443
+          objects.githubusercontent.com:443
+          rubygems.org:443
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@v2
+      with:
+        disable-sudo: true
+        egress-policy: block
+        allowed-endpoints: >
+          github.com:443
+          index.rubygems.org:443
+          objects.githubusercontent.com:443
+          rubygems.org:443
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@v2
+      with:
+        disable-sudo: true
+        egress-policy: block
+        allowed-endpoints: >
+          github.com:443
+          index.rubygems.org:443
+          objects.githubusercontent.com:443
+          rubygems.org:443
+
 
     - name: Checkout repo
       uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
